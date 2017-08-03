@@ -6,8 +6,7 @@
     <meta name="keywords" content="HTML,CSS,XML,JavaScript">
     <meta name="author" content="John Doe">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="javascript.js"></script>
+    <link rel="css/stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
     <header>
@@ -15,56 +14,61 @@
     </header>
     <main>
         <div class="main-container">
-            <form name="cts_roc_report_submission" action="" method="GET">
+            <form id="cts_roc_report_submission" class="cts_roc_report_submission">
                 <div class="section-1">
                     <h2>Redo's</h2>
                     <p>How many redo's did we have?</p>
-                    <input type="text" name="how-many">
+                    <textarea type="text" name="text"></textarea>
                     <p>Why did we redo the work?</p>
-                    <input type="text" name="why-did-we">
+                    <textarea type="text" name="Redo-reason"></textarea>
                     <p>How will we prevent this in the future?</p>
-                    <input type="text" name="how-will-we">
+                    <textarea type="text" name="Redo-prevention"></textarea>
                 </div>
                 <div class="section-2">
                     <h2>Linear</h2>
                     <p>What's on the schedule for today?</p>
-                    <input type="text" name="whats-redo">
+                    <textarea type="text" name="Linear-schedule"></textarea>
                     <p>Issues encountered during processing.</p>
-                    <input type="text" name="issues-redo">
+                    <textarea type="text" name="Linear-issues"></textarea>
                     <p>Status of work in progress.</p>
-                    <input type="text" name="progress-redo">
+                    <textarea type="text" name="Linear-progress"></textarea>
                 </div>
                 <div class="section-3">
                     <h2>VOD</h2>
                     <p>What's on the schedule for today?</p>
-                    <input type="text" name="whats-vod">
+                    <textarea type="text" name="VOD-schedule"></textarea>
                     <p>Issues encountered during processing:</p>
-                    <input type="text" name="issues-vod">
+                    <textarea type="text" name="VOD-issues"></textarea>
                     <p>Status of work in progress:</p>
-                    <input type="text" name="progress-vod">
+                    <textarea type="text" name="VOD-progress"></textarea>
                 </div>
                 <div class="section-4">
                     <h2>EST/QC</h2>
                     <p>What's on the schedule for today?</p>
-                    <input type="text" name="whats-est">
+                    <textarea type="text" name="EST-schedule"></textarea>
                     <p>Issues encountered during processing:</p>
-                    <input type="text" name="issues-est">
+                    <textarea type="text" name="EST-issues"></textarea>
                     <p>Status of work:</p>
-                    <input type="text" name="progress-est">
+                    <textarea type="text" name="EST-progress"></textarea>
                 </div>
                 <div class="section-5">
                     <h2>Evertz</h2>
-                    <input type="text" name="input-evertz">
+                    <textarea type="text" name="Evertz"></textarea>
                     <h2>Salesforce</h2>
-                    <input type="text" name="input-sf">
-                    <h2>Status of work in progress:</h2>
-                    <input type="text" name="input-status">
+                    <textarea type="text" name="SF"></textarea>
                     <h2>Team</h2>
                     <p>Is there anyone out that is scheduled to work</p>
-                    <input type="text" name="input-team">
+                    <textarea type="text" name="Team"></textarea>
                 </div>
+                <button class="cts_roc_report_button" type="submit">Submit</button>
             </form>
         </div>
+        <div class="results">
+          <h2 class="results__heading">Form Data</h2>
+          <pre class="results__display-wrapper"><code class="results__display"></code></pre>
+        </div>
+        <script type="text/javascript" src="./js/javascript.js"></script>
+        <script type="text/javascript" src="./js/jquery-3.2.1.js"></script>
     </main>
     <footer>
     
