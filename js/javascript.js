@@ -79,11 +79,10 @@
     var handleFormSubmit = function handleFormSubmit(event) {
       event.preventDefault();
       var data = formToJSON(form.elements);
-      var dataContainer = document.getElementsByClassName('results__display')[0];
-      dataContainer.textContent = JSON.stringify(data, null, "  ");
-        
+     
       var payload = {
-                                "title":"Cake",
+                                "username":"CTS-ROC-Bot",
+                                "icon_emoji":":robot_face:",
                                 "attachments": [
                                     {
                                         "color": "#d83b01",
@@ -134,7 +133,7 @@
                                         ]
                                     },
                                     {
-                                        "color": "#008272",
+                                        "color": "#0078d7",
                                         "title": "EST/QC",
                                         "fields": [
                                             {
@@ -150,7 +149,7 @@
                                         ]
                                     },
                                     {
-                                        "color": "#0078d7",
+                                        "color": "#5c2e91",
                                         "fields": [
                                             {
                                                 "title": "Evertz",
@@ -170,11 +169,11 @@
                                 ]
                             };
       
-      var xhr = new XMLHttpRequest();
-
-      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      xhr.send(JSON.stringify(payload));
-      window.alert("The Information is now posted to Slack!");
+        var xhr = new XMLHttpRequest();
+        
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send(JSON.stringify(payload));
+        window.alert("The Information is now posted to Slack!");
     };
 
     /*
