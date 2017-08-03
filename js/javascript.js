@@ -82,40 +82,99 @@
       var dataContainer = document.getElementsByClassName('results__display')[0];
       dataContainer.textContent = JSON.stringify(data, null, "  ");
         
-      var sample = '{
-    "attachments": [
-        {
-            "fallback": "Required plain-text summary of the attachment.",
-            "color": "#36a64f",
-            "pretext": "Optional text that appears above the attachment block",
-            "author_name": "Bobby Tables",
-            "author_link": "http://flickr.com/bobby/",
-            "author_icon": "http://flickr.com/icons/bobby.jpg",
-            "title": "Slack API Documentation",
-            "title_link": "https://api.slack.com/",
-            "text": "Optional text that appears within the attachment",
-            "fields": [
-                {
-                    "title": "Priority",
-                    "value": "High",
-                    "short": false
-                }
-            ],
-            "image_url": "http://my-website.com/path/to/image.jpg",
-            "thumb_url": "http://example.com/path/to/thumb.png",
-            "footer": "Slack API",
-            "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png",
-            "ts": 123456789
-        }
-    ]
-}';
+      var payload = {
+                                "title":"Cake",
+                                "attachments": [
+                                    {
+                                        "color": "#d83b01",
+                                        "title": "Redo's",
+                                        "fields": [
+                                            {
+                                                "title": "How many redo's did we have?",
+                                                "value": form.Redoamount.value
+                                            },{
+                                                "title": "Why did we redo the work?",
+                                                "value": form.Redoreason.value
+                                            },{
+                                                "title": "How will we prevent this in the future?",
+                                                "value": form.Redoprevention.value
+                                            }                                    
+                                        ]
+                                    },
+                                    {
+                                        "color": "#ffb900",
+                                        "title": "Linear",
+                                        "fields": [
+                                            {
+                                                "title": "What's on the schedule for today?",
+                                                "value": form.Linearschedule.value
+                                            },{
+                                                "title": "Issues encountered during processing.",
+                                                "value": form.Linearissues.value
+                                            },{
+                                                "title": "Status of work in progress.",
+                                                "value": form.Linearprogress.value
+                                            }                                    
+                                        ]
+                                    },
+                                    {
+                                        "color": "#107c10",
+                                        "title": "VOD",
+                                        "fields": [
+                                            {
+                                                "title": "What's on the schedule for today?",
+                                                "value": form.VODschedule.value
+                                            },{
+                                                "title": "Issues encountered during processing.",
+                                                "value": form.VODissues.value
+                                            },{
+                                                "title": "Status of work in progress.",
+                                                "value": form.VODprogress.value
+                                            }                                   
+                                        ]
+                                    },
+                                    {
+                                        "color": "#008272",
+                                        "title": "EST/QC",
+                                        "fields": [
+                                            {
+                                                "title": "What's on the schedule for today?",
+                                                "value": form.ESTschedule.value
+                                            },{
+                                                "title": "Issues encountered during processing.",
+                                                "value": form.ESTissues.value
+                                            },{
+                                                "title": "Status of work in progress.",
+                                                "value": form.ESTprogress.value
+                                            }                                    
+                                        ]
+                                    },
+                                    {
+                                        "color": "#0078d7",
+                                        "fields": [
+                                            {
+                                                "title": "Evertz",
+                                                "pretext": "",
+                                                "value": form.Evertz.value
+                                            },{
+                                                "title": "Salesforce",
+                                                "pretext": "",
+                                                "value": form.SF.value
+                                            },{
+                                                "title": "Team",
+                                                "pretext": "",
+                                                "value": form.Team.value
+                                            }                                    
+                                        ]
+                                    },
+                                ]
+                            };
       
       var xhr = new XMLHttpRequest();
-      xhr.open("POST", '', true);
+
       xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      // xhr.send(JSON.stringify({"text":slackStr}));
-      xhr.send(JSON.stringify(sample));
-      window.alert("The Information is not posted to Slack!");
+      xhr.send(JSON.stringify(payload));
+      window.alert("The Information is now posted to Slack!");
     };
 
     /*
